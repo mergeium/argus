@@ -1,0 +1,13 @@
+[package]
+name = "argus-worker"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Background workers for Argus IAM (projections, webhooks, lifecycle)"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-store = { workspace = true }
+tokio = { workspace = true }
+async-nats = { workspace = true }
+tracing = { workspace = true }

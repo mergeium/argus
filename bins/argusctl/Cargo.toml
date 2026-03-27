@@ -1,0 +1,19 @@
+[package]
+name = "argusctl"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "CLI management tool for Argus IAM"
+publish = false
+
+[[bin]]
+name = "argusctl"
+path = "src/main.rs"
+
+[dependencies]
+argus-core = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }

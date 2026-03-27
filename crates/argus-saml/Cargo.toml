@@ -1,0 +1,9 @@
+[package]
+name = "argus-saml"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "SAML 2.0 SP/IdP support for Argus IAM"
+
+[dependencies]
+argus-core = { workspace = true }

@@ -1,0 +1,9 @@
+[package]
+name = "argus-connectors"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "External connectors for Argus IAM (LDAP, social login, SCIM)"
+
+[dependencies]
+argus-core = { workspace = true }

@@ -1,0 +1,10 @@
+[package]
+name = "argus-telemetry"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "OpenTelemetry traces, metrics, and logs for Argus IAM"
+
+[dependencies]
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

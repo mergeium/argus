@@ -1,0 +1,10 @@
+[package]
+name = "argus-webauthn"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "WebAuthn/FIDO2/Passkey support for Argus IAM"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }

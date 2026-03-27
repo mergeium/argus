@@ -1,0 +1,18 @@
+[package]
+name = "argus-authz"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "ReBAC/Zanzibar authorization engine with OpenFGA wire-protocol compatibility"
+
+[dependencies]
+argus-core = { workspace = true }
+sqlx = { workspace = true }
+redis = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

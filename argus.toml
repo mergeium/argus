@@ -1,0 +1,50 @@
+[server]
+host = "0.0.0.0"
+port = 8080
+request_timeout_secs = 30
+# tls_cert = "/etc/argus/tls/cert.pem"
+# tls_key = "/etc/argus/tls/key.pem"
+
+[database]
+url = "postgres://argus:argus@localhost:5432/argus"
+max_connections = 10
+migrate_on_start = true
+
+[redis]
+url = "redis://localhost:6379"
+
+[nats]
+url = "nats://localhost:4222"
+
+[crypto]
+argon2_memory_kib = 19456
+argon2_iterations = 2
+argon2_parallelism = 1
+jwt_issuer = "https://auth.argus.dev"
+access_token_ttl_secs = 900
+refresh_token_ttl_secs = 2592000
+
+[auth]
+signing_key_source = "db"
+passkey_first = true
+password_login_enabled = true
+max_failed_attempts = 5
+lockout_duration_secs = 900
+
+[telemetry]
+metrics_enabled = true
+tracing_level = "info"
+log_format = "json"
+# otlp_endpoint = "http://otel:4318"
+
+[limits]
+auth_rate_limit_per_minute = 10
+max_sessions_per_user = 5
+max_request_body_bytes = 1048576
+
+[features]
+oidc = true
+saml = false
+webauthn = true
+ldap = false
+scim = false

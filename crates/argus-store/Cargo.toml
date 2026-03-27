@@ -1,0 +1,22 @@
+[package]
+name = "argus-store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Event sourcing store, PostgreSQL backend, Redis cache, and NATS messaging for Argus IAM"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }
+sqlx = { workspace = true }
+redis = { workspace = true }
+async-nats = { workspace = true }
+bytes = "1"
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+async-trait = "0.1"

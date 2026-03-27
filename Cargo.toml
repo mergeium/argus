@@ -1,6 +1,105 @@
-[package]
-name = "argus"
+[workspace]
+resolver = "3"
+members = [
+    # Layer 0 — Foundation
+    "crates/argus-core",
+    "crates/argus-config",
+    # Layer 1 — Crypto
+    "crates/argus-crypto",
+    # Layer 2 — Data
+    "crates/argus-store",
+    # Layer 3 — Auth & Authz
+    "crates/argus-auth",
+    "crates/argus-authz",
+    "crates/argus-mfa",
+    "crates/argus-webauthn",
+    "crates/argus-saml",
+    # Layer 4 — API & Services
+    "crates/argus-api",
+    "crates/argus-tenant",
+    "crates/argus-connectors",
+    "crates/argus-threat",
+    "crates/argus-worker",
+    "crates/argus-telemetry",
+    "crates/argus-sdk",
+    # Tests
+    "tests/phase0",
+    # Layer 5 — Binaries
+    "bins/argus-server",
+    "bins/argusctl",
+]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["Argus Contributors"]
+repository = "https://github.com/argus-iam/argus"
 
-[dependencies]
+[workspace.dependencies]
+# Internal crates
+argus-core = { path = "crates/argus-core" }
+argus-config = { path = "crates/argus-config" }
+argus-crypto = { path = "crates/argus-crypto" }
+argus-store = { path = "crates/argus-store" }
+argus-auth = { path = "crates/argus-auth" }
+argus-authz = { path = "crates/argus-authz" }
+argus-api = { path = "crates/argus-api" }
+argus-tenant = { path = "crates/argus-tenant" }
+argus-telemetry = { path = "crates/argus-telemetry" }
+
+# Async runtime
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "io-util", "net", "signal"] }
+
+# Web framework
+axum = { version = "0.8", features = ["macros"] }
+tower = { version = "0.5" }
+tower-http = { version = "0.6", features = ["cors", "trace", "request-id", "timeout", "util"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls", "postgres", "uuid", "chrono", "json"] }
+
+# Redis
+redis = { version = "0.27", features = ["aio", "tokio-comp", "connection-manager"] }
+
+# Crypto
+argon2 = "0.5"
+ed25519-dalek = { version = "2", features = ["rand_core", "pem"] }
+chacha20poly1305 = "0.10"
+hkdf = "0.12"
+hmac = "0.12"
+sha2 = "0.10"
+subtle = "2"
+zeroize = { version = "1", features = ["derive"] }
+rand = "0.8"
+jsonwebtoken = "9"
+ring = "0.17"
+
+# IDs
+uuid = { version = "1", features = ["v7", "serde"] }
+
+# Config
+config = "0.14"
+
+# Error handling
+thiserror = "2"
+
+# Logging / Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# NATS
+async-nats = "0.38"
+
+# Base64
+base64 = "0.22"
+
+# CLI
+clap = { version = "4", features = ["derive"] }

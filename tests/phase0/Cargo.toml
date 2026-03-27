@@ -1,0 +1,21 @@
+[package]
+name = "argus-tests-phase0"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[lib]
+name = "argus_tests_phase0"
+path = "src/lib.rs"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }
+argus-store = { workspace = true }
+argus-authz = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+zeroize = { workspace = true }
+tokio = { workspace = true }
+toml = "0.8"

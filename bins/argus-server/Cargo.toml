@@ -1,0 +1,27 @@
+[package]
+name = "argus-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Main HTTP server binary for Argus IAM"
+publish = false
+
+[[bin]]
+name = "argus-server"
+path = "src/main.rs"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }
+argus-store = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+axum-server = { version = "0.7", features = ["tls-rustls"] }

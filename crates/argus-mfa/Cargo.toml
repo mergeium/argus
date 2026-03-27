@@ -1,0 +1,10 @@
+[package]
+name = "argus-mfa"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Multi-factor authentication for Argus IAM (TOTP, passkey, email, SMS)"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }

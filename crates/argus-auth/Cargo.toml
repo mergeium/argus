@@ -1,0 +1,11 @@
+[package]
+name = "argus-auth"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Authentication engine for Argus IAM (OIDC, OAuth2, DAG flow engine)"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }
+argus-store = { workspace = true }

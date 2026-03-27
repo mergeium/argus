@@ -1,0 +1,20 @@
+[package]
+name = "argus-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "HTTP/gRPC API layer for Argus IAM (axum routes, middleware)"
+
+[dependencies]
+argus-core = { workspace = true }
+argus-crypto = { workspace = true }
+argus-store = { workspace = true }
+argus-auth = { workspace = true }
+argus-authz = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
